@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import url from '../../services/url'
 import _ from 'lodash'
 
 function Home() {
   const [serachItem, setserachItem] = useState('');
   const [itemList, setItemList] = useState([]);
-
   const setFiledOnChange = (e) => {
     setserachItem(e.target.value);
   }
 
+  useEffect(() => {
+    if (!serachItem) {
+      movieList('iron');
+    }
+  }, [itemList])
+
   const movieList = (searchItem) => {
-    console.log(searchItem)
     url(searchItem).then(response => {
-      console.log(response);
       setItemList(response.data.Search)
     })
   }
@@ -46,6 +49,9 @@ function Home() {
       <div className="row"><br /></div>
 
       <div className="row">
+
+        {_.isEmpty(itemList) && <div>SORRY!! No content found</div>}
+
         {!_.isEmpty(itemList) && itemList.map(item =>
           <div className="col-4">
             <div class="card" style={{ width: '18rem' }}>
