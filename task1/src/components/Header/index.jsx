@@ -4,15 +4,21 @@ function Header() {
   return (
     <div>
       <div className="fixed-top">
-        <nav className="navbar navbar-dark bg-dark">
-          <a class="navbar-brand" href='/'>Appointment</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a className="navbar-brand" >Appointment</a>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-item nav-link" href='appointmentList'>Show List</a>
-            </div>
+
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="/">Create Appointment <span class="sr-only">(current)</span></a>
+              </li>
+              <li className="nav-item">
+                <a class="nav-link" href="appointmentList">Show List</a>
+              </li>
+            </ul>
           </div>
         </nav>
       </div>

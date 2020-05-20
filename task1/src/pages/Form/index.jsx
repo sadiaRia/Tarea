@@ -145,6 +145,7 @@ export default class Form extends Component {
             <button disabled={this.checkInvalidInput()} type="button" className="btn btn-dark" onClick={this.onSubmit}>Submit</button>
           </div>
         </form>
+        <br /><br />
       </div>
     )
   }
