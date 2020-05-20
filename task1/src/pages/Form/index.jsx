@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import _ from 'lodash';
 
 let OltimeSlotList = ['4.00-5.00', '5.00-6.00', '6.00-7.00']
-let timeSlotList = []
+let timeSlotList = OltimeSlotList;
 
 export default class Form extends Component {
   state = {
@@ -144,7 +144,6 @@ export default class Form extends Component {
           <div className="form-group">
             <button disabled={this.checkInvalidInput()} type="button" className="btn btn-dark" onClick={this.onSubmit}>Submit</button>
           </div>
-
         </form>
       </div>
     )
