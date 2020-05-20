@@ -13,7 +13,7 @@ function Home() {
     if (!serachItem) {
       movieList('iron');
     }
-  }, [itemList])
+  }, [])
 
   const movieList = (searchItem) => {
     url(searchItem).then(response => {
