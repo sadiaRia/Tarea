@@ -14,6 +14,7 @@ export default class List extends Component {
     return (
       <div>
         <div>
+        {!_.isEmpty(appointmentList) ?
           <table className="table">
             <thead>
               <tr>
@@ -23,7 +24,7 @@ export default class List extends Component {
               </tr>
             </thead>
             <tbody>
-              {!_.isEmpty(appointmentList) && appointmentList.map((item, index) =>
+              {appointmentList.map((item, index) =>
                 <tr>
                   <td>{item.firstName} {item.lastName}</td>
                   <td>{item.date}</td>
@@ -31,7 +32,7 @@ export default class List extends Component {
                 </tr>
               )}
             </tbody>
-          </table>
+          </table> :<div style={{textAlign:'center'}}> No appointment</div>}
         </div>
       </div>
     )
