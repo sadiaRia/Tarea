@@ -47,7 +47,18 @@ export default class Form extends Component {
     }
   }
 
+  validateMobileNumber = (mobileNumber) => {
+    const pattern = /(^(\+88|0088)?(01){1}[13456789]{1}(\d){8})$/;
+    if (pattern.test(mobileNumber)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
   resetState = () => {
+    this._getListFromLocalStorage();
     this.setState({
       firstName: '',
       lastName: '',
@@ -77,7 +88,7 @@ export default class Form extends Component {
       date,
       time
     }
-    if (this._validateEmail(email)) {
+    if (this._validateEmail(email) && this.validateMobileNumber(phoneNumber)) {
       let list = this._getListFromLocalStorage();
       list.push(payload);
       localStorage.setItem('appointList', JSON.stringify(list));
