@@ -43,7 +43,7 @@ export default class Form extends Component {
       })
       const newTimeSlotList = []
       OltimeSlotList.filter(item => _.includes(bookedSlot, item) ? '' : newTimeSlotList.push(item));
-      timeSlotList = !_.isEmpty(newTimeSlotList) ? newTimeSlotList : OltimeSlotList;
+      timeSlotList = newTimeSlotList;
     }
   }
 
